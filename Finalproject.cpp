@@ -230,8 +230,8 @@ void No_of_records()
 
 void Display()
 {   
-    char user[11]="pranjal@23";
-    int pass=2303;
+    char user[11]="Pranjal";
+    int pass=1234;
     char user_enter[11];
     int pass_enter=2303;
     int attempt=0;
