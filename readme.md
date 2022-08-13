@@ -1,5 +1,8 @@
 #  Bank Management System
 
+## Manager's Credential
+ - User Id- Pranjal
+ - Password- 1234
 ## Features
 
 - Secured By a Admins Password
