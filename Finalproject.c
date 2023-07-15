@@ -2,7 +2,7 @@
 #include<string.h>
 #include<math.h>
 #include<stdlib.h>
-#include<conio.h>
+#include<stdbool.h>
 #define ENTER 13
 #define TAB 9
 #define BKSP 8
@@ -35,7 +35,7 @@ void SWAP_REC()
 
 void Insert()
 {
-     int dh;
+    int dh;
     Store * temp;
     temp=(Store*)malloc(sizeof(Store));
     printf("\nEnter The details of coustomer:");
@@ -76,36 +76,14 @@ void Insert()
     else{
         temp->acno=accno;
     }
-    fclose(fp);
-    fflush(stdin);
+    //fclose(fp);
+    char name[20];
     printf("\nName: ");
-    gets(temp->name);
-    printf("\nCreate Your pin(5 digit): ");
-    int i=0;
     fflush(stdin);
-    char ch;
-    while(1)
-    {
-        ch=getch();
-        if(ch==ENTER ||ch==TAB)
-        {
-            pwd[i]='\0';
-            break;
-        }
-        else if(ch==BKSP)
-        {
-                i--;
-                printf("\b \b");
-         if(i<0)
-         i=0;   
-        }
-        else
-        {
-            pwd[i]=ch;
-            i++;
-            printf("*  \b");
-        }
-    }
+    scanf("%s",&temp->name);
+    printf("\nCreate Your pin(5 digit): ");
+    fflush(stdin);
+    scanf("%s",pwd);
     int getpass=0;
     for(int i=0;i<5;i++)
     {
@@ -236,12 +214,13 @@ void Display()
     int pass_enter=2303;
     int attempt=0;
     x:
-    fflush(stdin);
+    
     printf("\n\nEnter The Admins User Name: ");
-    scanf("%s",&user_enter);
+    fflush(stdin);
+    scanf("%s",user_enter);
     printf("\nEnter The Password: ");
     scanf("%d",&pass_enter);
-    if(strcmp(user_enter,user) && (pass_enter==pass))
+    if(!strcmp(user_enter,user) && (pass_enter==pass))
     {
         //
     int dh;
@@ -428,7 +407,7 @@ void  Transaction()
 
 void Search()
 {
-     Store *temp;
+    Store *temp;
     temp=root;
      printf("\nEnter Account Number Of The User: ");
      int acount_number;
@@ -436,13 +415,13 @@ void Search()
 
         fp=fopen("Bank_management.txt","r");
      
-        while(fread(temp,sizeof(Store),1,fp))
+        while(fread(temp,sizeof(Store),1,fp) && temp!=NULL)
         {
             if(temp->acno==acount_number)
             printf("\n%-30s \t %-20d \t %-20d\n",temp->name,temp->acno,temp->balance);
         }
      
-       
+    
         fclose(fp);
 }
 

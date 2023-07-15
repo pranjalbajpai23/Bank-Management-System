@@ -25,3 +25,8 @@
 - Creating a File that stores data even after deletion 
 
 This Code was written in 2021 and might have some problems in running in newer verions of g++/gcc
+UPDATE Date- 15/July/2023 
+Updated some part of the code, according to new methodologies
+- gets->fgets
+- getch->getchar
+**Shortlist by money feature is not working, program has a lot of uncovered edge cases in which code breaks.
