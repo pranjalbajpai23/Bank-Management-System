@@ -30,3 +30,6 @@ Updated some part of the code, according to new methodologies
 - gets->fgets
 - getch->getchar
 **Shortlist by money feature is not working, program has a lot of uncovered edge cases in which code breaks.
+
+https://github.com/pranjalbajpai23/Bank-Management-System/assets/85219606/0dba3122-81ee-4fa3-a20a-95c1880fb4e6
+
